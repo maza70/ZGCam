@@ -1,0 +1,80 @@
+abfrage der Location
+http://nominatim.openstreetmap.org/reverse?format=xml&lat=49.187875&lon=9.225414
+<?xml version="1.0" encoding="UTF-8" ?>
+<reversegeocode timestamp='Sun, 09 Jul 17 14:58:37 +0000' attribution='Data © OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright' querystring='format=xml&amp;lat=49.187875&amp;lon=9.225414'>
+  <result place_id="82893612" osm_type="way" osm_id="52302221" lat="49.1877928" lon="9.2253996" boundingbox="49.1877502,49.1878354,9.225334,9.2254652">10, Lerchenstraße, Neckarsulm, Verwaltungsgemeinschaft Neckarsulm, Landkreis Heilbronn, Regierungsbezirk Stuttgart, Baden-Württemberg, 74172, Deutschland</result>
+  <addressparts>
+    <house_number>10</house_number>
+    <road>Lerchenstraße</road>
+    <town>Neckarsulm</town>
+    <county>Verwaltungsgemeinschaft Neckarsulm</county>
+    <state_district>Regierungsbezirk Stuttgart</state_district>
+    <state>Baden-Württemberg</state>
+    <postcode>74172</postcode>
+    <country>Deutschland</country>
+    <country_code>de</country_code>
+  </addressparts>
+</reversegeocode>
+
+http://nominatim.openstreetmap.org/reverse?format=xml&lat=49.19951&lon=9.313826&zoom=18&addressdetails=1
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<reversegeocode timestamp='Sun, 09 Jul 17 15:20:24 +0000' attribution='Data © OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright' querystring='format=xml&amp;lat=49.19951&amp;lon=9.313826&amp;zoom=18&amp;addressdetails=1'>
+  <result place_id="131459949" osm_type="way" osm_id="268474676" ref="Salzweg" lat="49.1984327" lon="9.32133" boundingbox="49.1913319,49.1996852,9.2967456,9.3455986">Salzweg, Eberstadt, Verwaltungsverband Raum Weinsberg, Landkreis Heilbronn, Regierungsbezirk Stuttgart, Baden-Württemberg, 74246, Deutschland</result>
+  <addressparts>
+    <path>Salzweg</path>
+    <village>Eberstadt</village>
+    <county>Verwaltungsverband Raum Weinsberg</county>
+    <state_district>Regierungsbezirk Stuttgart</state_district>
+    <state>Baden-Württemberg</state>
+    <postcode>74246</postcode>
+    <country>Deutschland</country>
+    <country_code>de</country_code>
+  </addressparts>
+</reversegeocode>
+
+http://nominatim.openstreetmap.org/reverse?format=xml&lat=49.135700&lon=9.226827&zoom=18&addressdetails=1
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<reversegeocode timestamp='Sun, 09 Jul 17 15:18:31 +0000' attribution='Data © OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright' querystring='format=xml&amp;lat=49.135700&amp;lon=9.226827&amp;zoom=18&amp;addressdetails=1'>
+  <result place_id="92619381" osm_type="way" osm_id="107337849" lat="49.13563745" lon="9.22673029079096" boundingbox="49.1356033,49.1356997,9.2266437,9.22682">41, Mönchseestraße, Gewerbegebiet Stuttgarter Straße, Böckingen, Heilbronn, Regierungsbezirk Stuttgart, Baden-Württemberg, 74072, Deutschland</result>
+  <addressparts>
+    <house_number>41</house_number>
+    <road>Mönchseestraße</road>
+    <neighbourhood>Gewerbegebiet Stuttgarter Straße</neighbourhood>
+    <suburb>Böckingen</suburb>
+    <city>Heilbronn</city>
+    <county>Heilbronn</county>
+    <state_district>Regierungsbezirk Stuttgart</state_district>
+    <state>Baden-Württemberg</state>
+    <postcode>74072</postcode>
+    <country>Deutschland</country>
+    <country_code>de</country_code>
+  </addressparts>
+</reversegeocode>
+
+http://nominatim.openstreetmap.org/reverse?format=xml&lat=49.191731&lon=9.263351&zoom=18&addressdetails=1
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<reversegeocode timestamp='Sun, 09 Jul 17 15:23:38 +0000' attribution='Data © OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright' querystring='format=xml&amp;lat=49.191731&amp;lon=9.263351&amp;zoom=18&amp;addressdetails=1'>
+  <result place_id="162117680" osm_type="way" osm_id="429257996" ref="Neckarsulmer Weg" lat="49.1917152" lon="9.2660894" boundingbox="49.1884964,49.1940199,9.2649601,9.2687087">Neckarsulmer Weg, Erlenbach, Verwaltungsgemeinschaft Neckarsulm, Landkreis Heilbronn, Regierungsbezirk Stuttgart, Baden-Württemberg, 74235, Deutschland</result>
+  <addressparts>
+    <road>Neckarsulmer Weg</road>
+    <village>Erlenbach</village>
+    <county>Verwaltungsgemeinschaft Neckarsulm</county>
+    <state_district>Regierungsbezirk Stuttgart</state_district>
+    <state>Baden-Württemberg</state>
+    <postcode>74235</postcode>
+    <country>Deutschland</country>
+    <country_code>de</country_code>
+  </addressparts>
+</reversegeocode>
+
+
+
+
+
+9.225414
+blau #00A4E1
+Orange #F06000
+grün #01A544
