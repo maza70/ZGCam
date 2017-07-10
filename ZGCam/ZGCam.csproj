@@ -42,7 +42,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -153,6 +153,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y $(SolutionDir)\Debug\GPMF_Parser.exe  $(TargetDir)</PostBuildEvent>
+    <PostBuildEvent>copy /Y $(SolutionDir)\$(Configuration)\GPMF_Parser.exe  $(TargetDir)
+copy /Y $(SolutionDir)\$(TargetName)\libs\ffmpeg\*.dll  $(TargetDir)</PostBuildEvent>
   </PropertyGroup>
 </Project>

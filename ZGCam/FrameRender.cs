@@ -4,7 +4,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 /**
@@ -20,9 +22,17 @@ namespace ZGCam
 {
     public class FrameRender
     {
+        [DllImport("gdi32.dll", ExactSpelling = true)]
+        private static extern IntPtr AddFontMemResourceEx(byte[] pbFont, int cbFont, IntPtr pdv, out uint pcFonts);
+        [DllImport("gdi32.dll", ExactSpelling = true)]
+        internal static extern bool RemoveFontMemResourceEx(IntPtr fh);
+
+        static private IntPtr _fh = IntPtr.Zero;
+        static private PrivateFontCollection _pfc = null;
+
         private Rectangle _VideoSize = new Rectangle(0, 0, 960, 540);
         private Gauge _Gauge;
-        private static PrivateFontCollection _pfc;
+        //private static PrivateFontCollection _pfc;
         private Bitmap _Frame = null;
         private ZAppData _AppData;
 
@@ -37,9 +47,9 @@ namespace ZGCam
             _AppData = pAppData;
             _Gauge = new Gauge(this, ZGCam.Properties.Resources.gauge, 6, 4);
             _Frame = new Bitmap(_VideoSize.Width, _VideoSize.Height);
-            _SpeedFont = GetFont(60, FontStyle.Regular);
-            _UnitFont = GetFont(15, FontStyle.Regular);
-            _MaxSpeedFont = GetFont(15, FontStyle.Regular);
+            _SpeedFont = GetFont(50);
+            _UnitFont = GetFont(15);
+            _MaxSpeedFont = GetFont(12);
         }
 
 
@@ -121,6 +131,50 @@ namespace ZGCam
         }
 
 
+        public Font GetFont(float pSize)
+        {
+            //"Arial Black";"Impact"
+            return new Font("Arial Black", pSize,FontStyle.Bold);
+           
+        }
+
+        public Font GetSpecialFont(float size)
+        {
+
+            Font fnt = null;
+
+            if (null == _pfc)
+            {
+
+
+                byte[] ttf_font = ZGCam.Properties.Resources.Transformers_Movie_TTF;
+
+                uint cFonts;
+                AddFontMemResourceEx(ttf_font, ttf_font.Length, IntPtr.Zero, out cFonts);
+
+
+                IntPtr pbyt = Marshal.AllocCoTaskMem(ttf_font.Length);
+                if (null != pbyt)
+                {
+                    Marshal.Copy(ttf_font, 0, pbyt, ttf_font.Length);
+                    _pfc = new PrivateFontCollection();
+                    _pfc.AddMemoryFont(pbyt, ttf_font.Length);
+                    Marshal.FreeCoTaskMem(pbyt);
+                }
+
+            }
+
+            if (_pfc.Families.Length > 0)
+            {
+
+                fnt = new Font(_pfc.Families[0], size);
+            }
+
+            return fnt;
+        }
+
+
+        /*
         public Font GetFont(int pEmSize, FontStyle pStyle)
         {
             if (_pfc == null)
@@ -136,9 +190,19 @@ namespace ZGCam
 
 
             }
+            var fontFamily= _pfc.Families[0];
+            if (fontFamily.IsStyleAvailable(FontStyle.Regular))
+            {
+                 //jow
+            }
+            if (fontFamily.IsStyleAvailable(FontStyle.Bold))
+            {
+                //jow
+            }
 
             return new Font(_pfc.Families[0], pEmSize, pStyle);
         }
+        */
 
         public RectangleF MasureDrawOutlineText(Graphics pGraphic, string Text, Font pFont, int pOutlineWidth)
         {
