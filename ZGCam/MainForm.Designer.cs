@@ -33,6 +33,7 @@
             this.TBLog = new System.Windows.Forms.TextBox();
             this.PanelMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LlbLatitude = new System.Windows.Forms.LinkLabel();
             this.LbTimeline = new System.Windows.Forms.Label();
             this.LbNoGps = new System.Windows.Forms.Label();
             this.TrackBarTimeLine = new System.Windows.Forms.TrackBar();
@@ -73,7 +74,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.LlbLatitude = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.PanelMain.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -93,7 +93,7 @@
             this.TBLog.Name = "TBLog";
             this.TBLog.ReadOnly = true;
             this.TBLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TBLog.Size = new System.Drawing.Size(634, 131);
+            this.TBLog.Size = new System.Drawing.Size(634, 137);
             this.TBLog.TabIndex = 30;
             this.TBLog.WordWrap = false;
             // 
@@ -113,7 +113,7 @@
             this.PanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelMain.Location = new System.Drawing.Point(0, 0);
             this.PanelMain.Name = "PanelMain";
-            this.PanelMain.Size = new System.Drawing.Size(634, 470);
+            this.PanelMain.Size = new System.Drawing.Size(634, 464);
             this.PanelMain.TabIndex = 31;
             // 
             // panel1
@@ -151,8 +151,20 @@
             this.panel1.Controls.Add(this.cb_nolock);
             this.panel1.Location = new System.Drawing.Point(3, 150);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(627, 317);
+            this.panel1.Size = new System.Drawing.Size(627, 311);
             this.panel1.TabIndex = 40;
+            // 
+            // LlbLatitude
+            // 
+            this.LlbLatitude.AutoSize = true;
+            this.LlbLatitude.Location = new System.Drawing.Point(13, 97);
+            this.LlbLatitude.Name = "LlbLatitude";
+            this.LlbLatitude.Size = new System.Drawing.Size(41, 13);
+            this.LlbLatitude.TabIndex = 56;
+            this.LlbLatitude.TabStop = true;
+            this.LlbLatitude.Text = "latitude";
+            this.toolTip1.SetToolTip(this.LlbLatitude, "Shows the location in OpenStreetMap");
+            this.LlbLatitude.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbLatitude_LinkClicked);
             // 
             // LbTimeline
             // 
@@ -173,7 +185,7 @@
             this.LbNoGps.Name = "LbNoGps";
             this.LbNoGps.Size = new System.Drawing.Size(414, 33);
             this.LbNoGps.TabIndex = 55;
-            this.LbNoGps.Text = "No Gps informations in Video";
+            this.LbNoGps.Text = "No GPS-Lock in Video";
             this.LbNoGps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TrackBarTimeLine
@@ -214,7 +226,7 @@
             this.pb_preview.Image = ((System.Drawing.Image)(resources.GetObject("pb_preview.Image")));
             this.pb_preview.Location = new System.Drawing.Point(60, 146);
             this.pb_preview.Name = "pb_preview";
-            this.pb_preview.Size = new System.Drawing.Size(432, 168);
+            this.pb_preview.Size = new System.Drawing.Size(432, 162);
             this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_preview.TabIndex = 46;
             this.pb_preview.TabStop = false;
@@ -575,21 +587,9 @@
             // 
             this.splitContainer.Panel2.Controls.Add(this.TBLog);
             this.splitContainer.Size = new System.Drawing.Size(634, 611);
-            this.splitContainer.SplitterDistance = 470;
+            this.splitContainer.SplitterDistance = 464;
             this.splitContainer.SplitterWidth = 10;
             this.splitContainer.TabIndex = 33;
-            // 
-            // LlbLatitude
-            // 
-            this.LlbLatitude.AutoSize = true;
-            this.LlbLatitude.Location = new System.Drawing.Point(13, 97);
-            this.LlbLatitude.Name = "LlbLatitude";
-            this.LlbLatitude.Size = new System.Drawing.Size(41, 13);
-            this.LlbLatitude.TabIndex = 56;
-            this.LlbLatitude.TabStop = true;
-            this.LlbLatitude.Text = "latitude";
-            this.toolTip1.SetToolTip(this.LlbLatitude, "Shows the location in OpenStreetMap");
-            this.LlbLatitude.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlbLatitude_LinkClicked);
             // 
             // MainForm
             // 

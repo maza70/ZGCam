@@ -58,7 +58,7 @@
             // LbVersion
             // 
             this.LbVersion.AutoSize = true;
-            this.LbVersion.Location = new System.Drawing.Point(110, 51);
+            this.LbVersion.Location = new System.Drawing.Point(110, 50);
             this.LbVersion.Name = "LbVersion";
             this.LbVersion.Size = new System.Drawing.Size(63, 13);
             this.LbVersion.TabIndex = 3;

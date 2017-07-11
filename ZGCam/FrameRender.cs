@@ -88,12 +88,12 @@ namespace ZGCam
                                           90);
             }
 
-            if (!pAppData.Parser.HasGPS)
+            if (pAppData.ShowSpeed &&  !pAppData.Parser.HasGPS)
             {
                 string speedtext = "No GPS";
                 textRect = MasureDrawOutlineText(graph, speedtext, _SpeedFont, 2);
                 DrawOutlineText(graph, speedtext, _SpeedFont, Brushes.White, Color.Black, 2,
-                                                350 - ((int)(textRect.Width) + 20), 33);
+                                                350 - ((int)(textRect.Width) + 20), 40);
             }
 
             if (pAppData.ShowMaxSpeed && pAppData.Parser.HasGPS)
