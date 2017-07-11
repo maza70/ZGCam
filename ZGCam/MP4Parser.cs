@@ -142,7 +142,7 @@ namespace ZGCam
 
         private void RunParser()
         {
-            if (File.Exists(_AppData.XmlFileName) && _ForceReparse)
+            if (File.Exists(_AppData.XmlFileName) && !_ForceReparse)
             {
                 _AppData.Log("Xml File {0} alrady exists.", _AppData.XmlFileName);
                 return; //Xml exists

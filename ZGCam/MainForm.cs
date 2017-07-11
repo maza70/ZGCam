@@ -41,6 +41,9 @@ namespace ZGCam
             TbGpsFile.Text = _AppData.XmlFileName;
             TbFilename.Text = _AppData.GoProFileName;
 
+            BtnParse.Enabled = !String.IsNullOrEmpty(TbFilename.Text);
+
+
             CbMetric.Checked = _AppData.Units.MetricUnits;
             cbShowAlt.Checked = _AppData.ShowAlt ;
             CbShowGauge.Checked = _AppData.ShowGauge;
@@ -52,13 +55,14 @@ namespace ZGCam
 
             if (_AppData.IsValidParsed)
             {
-                LbNoGps.Visible = !_AppData.Parser.HasGPS;
+                pnlNoLock.Visible = !_AppData.Parser.HasGPS;
                 LbTimeline.Visible = _AppData.Parser.HasGPS;
                 TrackBarTimeLine.Visible = _AppData.Parser.HasGPS;
             }
             else
             {
-                LbNoGps.Visible = false;
+                pnlNoLock.Visible = false;
+                
                 LbTimeline.Visible = true;
                 TrackBarTimeLine.Visible = true;
             }
@@ -128,10 +132,21 @@ namespace ZGCam
 
         }
 
-        private void Parse()
+        private void Parse(bool pForce )
         {
+
+
+
             _AppData.ClearLog();
-            _AppData.Parser.ForceReparse = true;
+            _AppData.Parser.ForceReparse = pForce;
+
+            if (!File.Exists(_AppData.GoProFileName))
+            {
+                MessageBox.Show("Mp4 Source-File not exists!", "File not exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              return;
+            }
+
+
             BackgroundWorker bw = new BackgroundWorker();
             bw.WorkerSupportsCancellation = true;
             bw.WorkerReportsProgress = true;
@@ -154,7 +169,7 @@ namespace ZGCam
 
         private void BtnParse_Click(object sender, EventArgs e)
         {
-            Parse();
+            Parse(true);
         }
 
 
@@ -197,6 +212,8 @@ namespace ZGCam
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
+            TbLocation.Text = "";
+
             if (!string.IsNullOrEmpty(_AppData.GoProFileName))
             {
                 openFileDialog1.InitialDirectory = Path.GetDirectoryName(_AppData.GoProFileName);
@@ -210,9 +227,7 @@ namespace ZGCam
                 _AppData.GoProFileName = openFileDialog1.FileName;
                 _PreviewGpsEntry = null;
                 TrackBarTimeLine.Value = 0;
-                Parse();
-              
-
+                Parse(false);
             }
         }
 
@@ -276,6 +291,12 @@ namespace ZGCam
                 System.Diagnostics.Process.Start(url);
             }
 
+
+        }
+
+        private void LlGopro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Properties.Settings.Default.GoProHelpLink);
 
         }
     }

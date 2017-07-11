@@ -75,6 +75,8 @@
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pnlNoLock = new System.Windows.Forms.Panel();
+            this.LlGopro = new System.Windows.Forms.LinkLabel();
             this.PanelMain.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBarTimeLine)).BeginInit();
@@ -83,6 +85,7 @@
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            this.pnlNoLock.SuspendLayout();
             this.SuspendLayout();
             // 
             // TBLog
@@ -93,7 +96,7 @@
             this.TBLog.Name = "TBLog";
             this.TBLog.ReadOnly = true;
             this.TBLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TBLog.Size = new System.Drawing.Size(634, 137);
+            this.TBLog.Size = new System.Drawing.Size(693, 137);
             this.TBLog.TabIndex = 30;
             this.TBLog.WordWrap = false;
             // 
@@ -113,7 +116,7 @@
             this.PanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelMain.Location = new System.Drawing.Point(0, 0);
             this.PanelMain.Name = "PanelMain";
-            this.PanelMain.Size = new System.Drawing.Size(634, 464);
+            this.PanelMain.Size = new System.Drawing.Size(693, 464);
             this.PanelMain.TabIndex = 31;
             // 
             // panel1
@@ -121,9 +124,9 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.pnlNoLock);
             this.panel1.Controls.Add(this.LlbLatitude);
             this.panel1.Controls.Add(this.LbTimeline);
-            this.panel1.Controls.Add(this.LbNoGps);
             this.panel1.Controls.Add(this.TrackBarTimeLine);
             this.panel1.Controls.Add(this.CbShowSpeed);
             this.panel1.Controls.Add(this.pb_preview);
@@ -151,7 +154,7 @@
             this.panel1.Controls.Add(this.cb_nolock);
             this.panel1.Location = new System.Drawing.Point(3, 150);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(627, 311);
+            this.panel1.Size = new System.Drawing.Size(686, 311);
             this.panel1.TabIndex = 40;
             // 
             // LlbLatitude
@@ -181,9 +184,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LbNoGps.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbNoGps.ForeColor = System.Drawing.Color.Red;
-            this.LbNoGps.Location = new System.Drawing.Point(100, 16);
+            this.LbNoGps.Location = new System.Drawing.Point(4, 12);
             this.LbNoGps.Name = "LbNoGps";
-            this.LbNoGps.Size = new System.Drawing.Size(414, 33);
+            this.LbNoGps.Size = new System.Drawing.Size(651, 33);
             this.LbNoGps.TabIndex = 55;
             this.LbNoGps.Text = "No GPS-Lock in Video";
             this.LbNoGps.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -197,7 +200,7 @@
             this.TrackBarTimeLine.Location = new System.Drawing.Point(7, 16);
             this.TrackBarTimeLine.Maximum = 500;
             this.TrackBarTimeLine.Name = "TrackBarTimeLine";
-            this.TrackBarTimeLine.Size = new System.Drawing.Size(612, 45);
+            this.TrackBarTimeLine.Size = new System.Drawing.Size(671, 45);
             this.TrackBarTimeLine.SmallChange = 18;
             this.TrackBarTimeLine.TabIndex = 29;
             this.TrackBarTimeLine.TickFrequency = 18;
@@ -208,7 +211,7 @@
             // 
             this.CbShowSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CbShowSpeed.AutoSize = true;
-            this.CbShowSpeed.Location = new System.Drawing.Point(498, 250);
+            this.CbShowSpeed.Location = new System.Drawing.Point(557, 250);
             this.CbShowSpeed.Name = "CbShowSpeed";
             this.CbShowSpeed.Size = new System.Drawing.Size(87, 17);
             this.CbShowSpeed.TabIndex = 54;
@@ -226,7 +229,7 @@
             this.pb_preview.Image = ((System.Drawing.Image)(resources.GetObject("pb_preview.Image")));
             this.pb_preview.Location = new System.Drawing.Point(60, 146);
             this.pb_preview.Name = "pb_preview";
-            this.pb_preview.Size = new System.Drawing.Size(432, 162);
+            this.pb_preview.Size = new System.Drawing.Size(491, 162);
             this.pb_preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_preview.TabIndex = 46;
             this.pb_preview.TabStop = false;
@@ -235,7 +238,7 @@
             // 
             this.cbShowAlt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbShowAlt.AutoSize = true;
-            this.cbShowAlt.Location = new System.Drawing.Point(498, 181);
+            this.cbShowAlt.Location = new System.Drawing.Point(557, 181);
             this.cbShowAlt.Name = "cbShowAlt";
             this.cbShowAlt.Size = new System.Drawing.Size(90, 17);
             this.cbShowAlt.TabIndex = 53;
@@ -256,7 +259,7 @@
             // 
             this.CbShowMaxSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CbShowMaxSpeed.AutoSize = true;
-            this.CbShowMaxSpeed.Location = new System.Drawing.Point(498, 227);
+            this.CbShowMaxSpeed.Location = new System.Drawing.Point(557, 227);
             this.CbShowMaxSpeed.Name = "CbShowMaxSpeed";
             this.CbShowMaxSpeed.Size = new System.Drawing.Size(110, 17);
             this.CbShowMaxSpeed.TabIndex = 52;
@@ -268,7 +271,7 @@
             // 
             this.CbShowGauge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CbShowGauge.AutoSize = true;
-            this.CbShowGauge.Location = new System.Drawing.Point(498, 204);
+            this.CbShowGauge.Location = new System.Drawing.Point(557, 204);
             this.CbShowGauge.Name = "CbShowGauge";
             this.CbShowGauge.Size = new System.Drawing.Size(86, 17);
             this.CbShowGauge.TabIndex = 51;
@@ -289,7 +292,7 @@
             // 
             this.CbMetric.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CbMetric.AutoSize = true;
-            this.CbMetric.Location = new System.Drawing.Point(498, 158);
+            this.CbMetric.Location = new System.Drawing.Point(557, 158);
             this.CbMetric.Name = "CbMetric";
             this.CbMetric.Size = new System.Drawing.Size(80, 17);
             this.CbMetric.TabIndex = 50;
@@ -327,7 +330,7 @@
             // btnQueryLocation
             // 
             this.btnQueryLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnQueryLocation.Location = new System.Drawing.Point(504, 120);
+            this.btnQueryLocation.Location = new System.Drawing.Point(563, 120);
             this.btnQueryLocation.Name = "btnQueryLocation";
             this.btnQueryLocation.Size = new System.Drawing.Size(105, 20);
             this.btnQueryLocation.TabIndex = 30;
@@ -350,7 +353,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TbLocation.Location = new System.Drawing.Point(60, 120);
             this.TbLocation.Name = "TbLocation";
-            this.TbLocation.Size = new System.Drawing.Size(438, 20);
+            this.TbLocation.Size = new System.Drawing.Size(497, 20);
             this.TbLocation.TabIndex = 48;
             this.TbLocation.TextChanged += new System.EventHandler(this.TbLocation_TextChanged);
             // 
@@ -477,7 +480,7 @@
             this.TbOverlayFile.Location = new System.Drawing.Point(98, 86);
             this.TbOverlayFile.Name = "TbOverlayFile";
             this.TbOverlayFile.ReadOnly = true;
-            this.TbOverlayFile.Size = new System.Drawing.Size(532, 20);
+            this.TbOverlayFile.Size = new System.Drawing.Size(591, 20);
             this.TbOverlayFile.TabIndex = 36;
             // 
             // TbGpsFile
@@ -488,13 +491,13 @@
             this.TbGpsFile.Location = new System.Drawing.Point(98, 60);
             this.TbGpsFile.Name = "TbGpsFile";
             this.TbGpsFile.ReadOnly = true;
-            this.TbGpsFile.Size = new System.Drawing.Size(532, 20);
+            this.TbGpsFile.Size = new System.Drawing.Size(591, 20);
             this.TbGpsFile.TabIndex = 35;
             // 
             // BtnParse
             // 
             this.BtnParse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnParse.Location = new System.Drawing.Point(297, 114);
+            this.BtnParse.Location = new System.Drawing.Point(356, 114);
             this.BtnParse.Name = "BtnParse";
             this.BtnParse.Size = new System.Drawing.Size(155, 23);
             this.BtnParse.TabIndex = 34;
@@ -519,13 +522,13 @@
             this.TbFilename.Location = new System.Drawing.Point(98, 27);
             this.TbFilename.Name = "TbFilename";
             this.TbFilename.ReadOnly = true;
-            this.TbFilename.Size = new System.Drawing.Size(470, 20);
+            this.TbFilename.Size = new System.Drawing.Size(529, 20);
             this.TbFilename.TabIndex = 32;
             // 
             // BtnSelect
             // 
             this.BtnSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSelect.Location = new System.Drawing.Point(575, 27);
+            this.BtnSelect.Location = new System.Drawing.Point(634, 27);
             this.BtnSelect.Name = "BtnSelect";
             this.BtnSelect.Size = new System.Drawing.Size(56, 20);
             this.BtnSelect.TabIndex = 31;
@@ -536,7 +539,7 @@
             // BtnGenerateVideo
             // 
             this.BtnGenerateVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnGenerateVideo.Location = new System.Drawing.Point(475, 114);
+            this.BtnGenerateVideo.Location = new System.Drawing.Point(534, 114);
             this.BtnGenerateVideo.Name = "BtnGenerateVideo";
             this.BtnGenerateVideo.Size = new System.Drawing.Size(155, 23);
             this.BtnGenerateVideo.TabIndex = 30;
@@ -550,7 +553,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(634, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(693, 24);
             this.menuStrip1.TabIndex = 42;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -586,16 +589,40 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.TBLog);
-            this.splitContainer.Size = new System.Drawing.Size(634, 611);
+            this.splitContainer.Size = new System.Drawing.Size(693, 611);
             this.splitContainer.SplitterDistance = 464;
             this.splitContainer.SplitterWidth = 10;
             this.splitContainer.TabIndex = 33;
+            // 
+            // pnlNoLock
+            // 
+            this.pnlNoLock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlNoLock.Controls.Add(this.LlGopro);
+            this.pnlNoLock.Controls.Add(this.LbNoGps);
+            this.pnlNoLock.Location = new System.Drawing.Point(12, 0);
+            this.pnlNoLock.Name = "pnlNoLock";
+            this.pnlNoLock.Size = new System.Drawing.Size(658, 114);
+            this.pnlNoLock.TabIndex = 57;
+            // 
+            // LlGopro
+            // 
+            this.LlGopro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LlGopro.Location = new System.Drawing.Point(1, 64);
+            this.LlGopro.Name = "LlGopro";
+            this.LlGopro.Size = new System.Drawing.Size(654, 33);
+            this.LlGopro.TabIndex = 56;
+            this.LlGopro.TabStop = true;
+            this.LlGopro.Text = "How to enable GPS on your GoPro Hero 5 Black";
+            this.LlGopro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LlGopro.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LlGopro_LinkClicked);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 611);
+            this.ClientSize = new System.Drawing.Size(693, 611);
             this.Controls.Add(this.splitContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(640, 600);
@@ -615,6 +642,7 @@
             this.splitContainer.Panel2.ResumeLayout(false);
             this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
+            this.pnlNoLock.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -667,6 +695,8 @@
         private System.Windows.Forms.LinkLabel LlbLatitude;
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel pnlNoLock;
+        private System.Windows.Forms.LinkLabel LlGopro;
     }
 }
 

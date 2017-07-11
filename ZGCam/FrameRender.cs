@@ -75,8 +75,12 @@ namespace ZGCam
 
             if (pAppData.ShowSpeed && pAppData.Parser.HasGPS)
             {
-
                 string speedtext = String.Format("{0:0.0}", pAppData.Units.Speed(entry.gpsGroundSpeed3D));
+                if (!entry.HasLock)
+                {
+
+                    speedtext = String.Format("{0:0.0}", pAppData.Units.Speed(0));
+                }
         
                 textRect = MasureDrawOutlineText(graph, speedtext, _SpeedFont, 2);
                 textRect1 = MasureDrawOutlineText(graph, pAppData.Units.SpeedUnit, _MaxSpeedFont, 2);
@@ -106,8 +110,15 @@ namespace ZGCam
 
             if (pAppData.ShowAlt && pAppData.Parser.HasGPS)
             {
-                //--Altitude
                 string maxAltText = string.Format("alt: {0}", pAppData.Units.AltString(entry.gpsAltitude));
+                if (!entry.HasLock)
+                {
+
+                    maxAltText = String.Format("alt: {0}", pAppData.Units.AltString(0));
+                }
+
+                //--Altitude
+              
                 textRect = MasureDrawOutlineText(graph, maxAltText, _MaxSpeedFont, 2);
                 DrawOutlineText(graph, maxAltText, _MaxSpeedFont, Brushes.White, Color.Black, 2, 300 - (int)textRect.Width, 30);
             }
